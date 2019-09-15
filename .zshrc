@@ -11,8 +11,8 @@ eval `dircolors ~/.dircolors`
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
-
+# ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel10k"
 # ZSH_THEME="spaceship"
 
 
@@ -152,19 +152,22 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
-
+# export PATH="/opt/anaconda/bin:$PATH"
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-# __conda_setup="$('/opt/anaconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-# if [ $? -eq 0 ]; then
-#     eval "$__conda_setup"
-# else
-#     if [ -f "/opt/anaconda/etc/profile.d/conda.sh" ]; then
-#         . "/opt/anaconda/etc/profile.d/conda.sh"
-#     else
-#         export PATH="/opt/anaconda/bin:$PATH"
-#     fi
-# fi
-# unset __conda_setup
+ __conda_setup="$('/opt/anaconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+	eval "$__conda_setup"
+else
+	if [ -f "/opt/anaconda/etc/profile.d/conda.sh" ]; then
+         	. "/opt/anaconda/etc/profile.d/conda.sh"
+ 	else
+		export PATH="/opt/anaconda/bin:$PATH"
+     	fi
+fi
+unset __conda_setup
 # <<< conda initialize <<<
 
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
