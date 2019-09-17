@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/mnt/c/work/django-apps/config_files/uwsgi'
+let g:netrw_dirhist_2='/mnt/c/work/django_apps/internal_all_webserver/internal_all_webserver'
+let g:netrw_dirhist_3='/mnt/c/work/django_apps/internal_all_webserver'
+let g:netrw_dirhist_4='/mnt/c/work/django_apps/internal_all_webserver/config_files/scripts'
+let g:netrw_dirhist_5='/mnt/c/work/django_apps/internal_all_webserver_dev/config_files/pytest/.pytest_cache'
+let g:netrw_dirhist_6='/home/stephane/.oh-my-bash/custom/aliases'
+let g:netrw_dirhist_7='/home/stephane/.conda'
