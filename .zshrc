@@ -1,4 +1,10 @@
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /usr/share/zsh/vendor-completions/_fzf
+
 eval `dircolors ~/.dircolors`
+export LS_COLORS
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -7,8 +13,8 @@ eval `dircolors ~/.dircolors`
 export ZSH="/home/stephane/.oh-my-zsh"
 
 # set colors for LS_COLORS
-#ZSH_DISABLE_COMPFIX="true"
-ZSH_DISABLE_COMPFIX=true
+# ZSH_DISABLE_COMPFIX="true"
+# ZSH_DISABLE_COMPFIX=true
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -101,6 +107,7 @@ else
 fi
 
 bindkey -v 
+#bindkey '^R' history-incremental-search-backward
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
