@@ -2,6 +2,8 @@ source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/zsh/vendor-completions/_fzf
 
 eval `dircolors ~/.dircolors`
+TERM=xterm-256color
+
 export LS_COLORS
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -142,8 +144,5 @@ unset __conda_setup
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 ZLE_RPROMPT_INDENT=0
 
-# export pantry 
-export PYTHONPATH=":/opt:/opt/nuritas_code/"
+source .nuritas_conf.sh
 
-
-TERM=xterm-256color

@@ -1,4 +1,4 @@
 
 # install dependency 
-apt install fzf 
+apt install zsh fzf
 
