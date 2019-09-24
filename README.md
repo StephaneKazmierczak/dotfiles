@@ -1,6 +1,4 @@
 
-
-# for search need to install fzf
+# install dependency 
 apt install fzf 
 
-# for font need to copy TTF into .local/share/
