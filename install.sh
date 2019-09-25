@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # save local install dir
-DOTFILE_DIR=$(pwd)
+export DOTFILE_DIR=$(pwd)
 
 # sudo install 
 sudo apt update && sudo apt install zsh fzf vim
@@ -10,7 +10,11 @@ sudo apt update && sudo apt install zsh fzf vim
 cd $HOME 
 
 # install oh my zsh 
-sh -c "$(wget https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh -O -)"
+# sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+# sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" "" --unattended
+git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+export ZSH="$HOME/.oh-my-zsh"
+export ZSH_CUSTOM="$ZSH/custom"
 
 # install dependancy 
 # theme
@@ -21,8 +25,9 @@ ln -s $HOME/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme $HOME
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-# remove default zshrc 
-rm $HOME/.zshrc
-
 # symlink files
 ln -s $DOTFILE_DIR/.* $HOME/.
+
+# change shell and source 
+chsh -s $(which zsh)
+source .zshrc

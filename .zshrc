@@ -145,5 +145,5 @@ unset __conda_setup
 ZLE_RPROMPT_INDENT=0
 
 
-[[ -f ~./.nuritasrc.sh ]] && source .nuritasrc.sh
+[[ -f ~/.nuritasrc.sh ]] && source .nuritasrc.sh
 
