@@ -21,4 +21,9 @@ let g:airline_theme='dracula'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = '|'
 
+
+let NERDTreeShowHidden=1
+map <C-n> :NERDTreeToggle<CR>
+
+
 colorscheme dracula
