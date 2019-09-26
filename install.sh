@@ -11,10 +11,13 @@ cd $HOME
 
 # install oh my zsh 
 # sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-# sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" "" --unattended
-git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-export ZSH="$HOME/.oh-my-zsh"
-export ZSH_CUSTOM="$ZSH/custom"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" "" --unattended
+#git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+#ZSH="$HOME/.oh-my-zsh"
+#ZSH_CUSTOM="$ZSH/custom"
+
+
+
 
 # install dependancy 
 # theme
@@ -26,7 +29,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 # symlink files
-ln -s $DOTFILE_DIR/.* $HOME/.
+# ln -s $DOTFILE_DIR/.* $HOME/. # need to exclude .git 
 
 # change shell and source 
 chsh -s $(which zsh)
