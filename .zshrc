@@ -1,5 +1,3 @@
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-source /usr/share/zsh/vendor-completions/_fzf
 
 eval `dircolors ~/.dircolors`
 TERM=xterm-256color
@@ -88,8 +86,8 @@ plugins=(
 	git 
 	debian
 	z
-#	zsh-autosuggestions
-#	zsh-syntax-highlighting
+	zsh-autosuggestions
+	zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -139,11 +137,12 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /usr/share/zsh/vendor-completions/_fzf
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 ZLE_RPROMPT_INDENT=0
-
 
 [[ -f ~/.nuritasrc.sh ]] && source .nuritasrc.sh
 

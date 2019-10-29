@@ -4,7 +4,7 @@
 export DOTFILE_DIR=$(pwd)
 
 # sudo install 
-sudo apt update && sudo apt install zsh fzf vim
+sudo apt update && sudo apt install zsh fzf vim curl
 
 # got to the home foder 
 cd $HOME 
@@ -13,11 +13,8 @@ cd $HOME
 # sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" "" --unattended
 #git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-#ZSH="$HOME/.oh-my-zsh"
-#ZSH_CUSTOM="$ZSH/custom"
-
-
-
+ZSH="$HOME/.oh-my-zsh"
+ZSH_CUSTOM="$ZSH/custom"
 
 # install dependancy 
 # theme
@@ -29,7 +26,12 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 # symlink files
-# ln -s $DOTFILE_DIR/.* $HOME/. # need to exclude .git 
+rm %HOME/.zshrc
+ln -s $DOTFILE_DIR/.zshrc $HOME/.  
+ln -s $DOTFILE_DIR/.p10k.zsh $HOME/. 
+ln -s $DOTFILE_DIR/.vimrc $HOME/.
+ln -s $DOTFILE_DIR/.dircolors $HOME/.
+ln -s $DOTFILE_DIR/.local $HOME/.
 
 # change shell and source 
 chsh -s $(which zsh)
