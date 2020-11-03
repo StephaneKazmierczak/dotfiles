@@ -83,8 +83,9 @@ ZSH_THEME="powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-	git 
-	debian
+#	git 
+#	debian
+#	nvm
 	z
 	zsh-autosuggestions
 	zsh-syntax-highlighting
@@ -146,3 +147,8 @@ ZLE_RPROMPT_INDENT=0
 
 [[ -f ~/.nuritasrc.sh ]] && source .nuritasrc.sh
 
+# adding keychain for ssh
+/usr/bin/keychain --nogui $HOME/.ssh/id_ed25519
+source $HOME/.keychain/$(hostname)-sh
+
+cd ~
