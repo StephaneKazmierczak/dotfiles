@@ -86,6 +86,7 @@ plugins=(
 #	git 
 #	debian
 #	nvm
+	docker
 	z
 	zsh-autosuggestions
 	zsh-syntax-highlighting
