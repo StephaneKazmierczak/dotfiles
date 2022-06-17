@@ -139,17 +139,27 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+
+# fzf configuration
 source /usr/share/doc/fzf/examples/key-bindings.zsh
-source /usr/share/zsh/vendor-completions/_fzf
+source /usr/share/doc/fzf/examples/completion.zsh
+export FZF_CTRL_T_OPTS="--preview 'batcat --color=always --line-range :50 {}'"
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -50'"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 ZLE_RPROMPT_INDENT=0
 
-[[ -f ~/.nuritasrc.sh ]] && source .nuritasrc.sh
+[[ -f ~/.nuritasrc.sh ]] && source ~/.nuritasrc.sh
+[[ -f ~/.totp.sh ]] && source ~/.totp.sh
 
 # adding keychain for ssh
-/usr/bin/keychain --nogui $HOME/.ssh/id_ed25519
-source $HOME/.keychain/$(hostname)-sh
+# /usr/bin/keychain --nogui $HOME/.ssh/id_ed25519
+# source $HOME/.keychain/$(hostname)-sh
+
+# export for xming 
+# export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):1.0
+export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0.0
+export LIBGL_ALWAYS_INDIRECT=1
 
 cd ~
