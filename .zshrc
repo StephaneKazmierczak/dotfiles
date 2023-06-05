@@ -83,10 +83,10 @@ ZSH_THEME="powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-#	git 
-#	debian
+#	git
+	# debian
 #	nvm
-	docker
+	# docker
 	z
 	zsh-autosuggestions
 	zsh-syntax-highlighting
@@ -108,7 +108,7 @@ else
    export EDITOR='mvim'
 fi
 
-bindkey -v 
+bindkey -v
 #bindkey '^R' history-incremental-search-backward
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -126,14 +126,14 @@ bindkey -v
 # export PATH="/opt/anaconda/bin:$PATH"
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/opt/anaconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/stephane/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/opt/anaconda/etc/profile.d/conda.sh" ]; then
-        . "/opt/anaconda/etc/profile.d/conda.sh"
+    if [ -f "/home/stephane/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/stephane/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/opt/anaconda/bin:$PATH"
+        export PATH="/home/stephane/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
@@ -157,7 +157,7 @@ ZLE_RPROMPT_INDENT=0
 # /usr/bin/keychain --nogui $HOME/.ssh/id_ed25519
 # source $HOME/.keychain/$(hostname)-sh
 
-# export for xming 
+# export for xming
 # export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):1.0
 export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0.0
 export LIBGL_ALWAYS_INDIRECT=1
